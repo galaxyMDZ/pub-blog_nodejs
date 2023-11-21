@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+
+<!-- Set the language of the HTML document to English -->
+<html lang="en">
+
+<!-- Include the head.ejs from the partial folder -->
+<%- include("./partials/head.ejs") %>
+
+<!-- Define the body section of the HTML document -->
+<body>
+  <!-- Include the nav.ejs from the partial folder -->
+  <%- include("./partials/nav.ejs") %>
+
+  <!-- Define a div element with the class "blogs content" -->
+  <div class="blogs content">
+    <!-- Display a heading "All Blogs" -->
+    <h2>All Blogs</h2>
+
+    <!-- Check if the blogs array has any elements -->
+    <% if (blogs.length > 0) { %>
+      <!-- Loop through each blog object in the array -->
+      <% blogs.forEach(blog => { %>
+        <!-- Display the title and snippet properties of the blog object -->
+        <a href="/blogs/<%= blog._id %>" class="single">
+          <h3 class="title"><%= blog.title %></h3>
+        <p class="snippet"><%= blog.snippet %></p>
+        </a>
+      <% }) %>
+    <% } else { %>
+      <!-- Display a message if the blogs array is empty -->
+      <p>There are no blogs to display...</p>
+    <% } %>
+  </div>
+
+  <!-- Include the footer.ejs from the partial folder -->
+  <%- include("./partials/footer.ejs") %>
+</body>
+
+<!-- Close the HTML document -->
+</html>

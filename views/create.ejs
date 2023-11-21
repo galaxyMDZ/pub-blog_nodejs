@@ -1,0 +1,35 @@
+<!-- Set the language of the HTML document to English -->
+<html lang="en">
+
+<!-- Include the head.ejs partial -->
+<%- include("./partials/head.ejs") %>
+
+<!-- Define the body section of the HTML document -->
+<body>
+  <!-- Include the nav.ejs partial -->
+  <%- include("./partials/nav.ejs") %>
+
+  <!-- Define a div element with the class "create-blog content" -->
+  <div class="create-blog content">
+    <!-- Define a form element -->
+    <form action="/blogs" method="POST">
+      <!-- Define a label and input element for the blog title -->
+      <label for="title">Blog title:</label>
+      <input type="text" id="title" name="title" required>
+      <!-- Define a label and input element for the blog snippet -->
+      <label for="snippet">Blog snippet:</label>
+      <input type="text" id="snippet" name="snippet" required>
+      <!-- Define a label and textarea element for the blog body -->
+      <label for="body">Blog body:</label>
+      <textarea id="body" name="body" required></textarea>
+      <!-- Define a button element to submit the form -->
+      <button>Submit</button>
+    </form>
+  </div>
+
+  <!-- Include the footer.ejs partial -->
+  <%- include("./partials/footer.ejs") %>
+</body>
+
+<!-- Close the HTML document -->
+</html>
